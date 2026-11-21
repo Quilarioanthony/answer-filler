@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Answer Filler — Test Form</title>
+  <style>
+    body { font: 15px/1.5 Arial, sans-serif; max-width: 720px; margin: 32px auto; color: #1f2937; }
+    fieldset { border: 1px solid #e5e7eb; border-radius: 8px; margin: 0 0 16px; padding: 12px 16px; }
+    legend { font-weight: bold; padding: 0 6px; }
+    label { display: block; margin: 6px 0; }
+    input[type=text], textarea, select { padding: 6px; border: 1px solid #d1d5db; border-radius: 4px; }
+    button { padding: 8px 14px; }
+  </style>
+</head>
+<body>
+  <h1>Answer Filler — Test Form</h1>
+  <p>Load the extension, open this page, then use Preview / Fill page. Answers are matched in order.</p>
+
+  <form onsubmit="return false">
+    <fieldset>
+      <legend>1. Capital of France</legend>
+      <label><input type="radio" name="q1" value="A"> A. London</label>
+      <label><input type="radio" name="q1" value="B"> B. Paris</label>
+      <label><input type="radio" name="q1" value="C"> C. Rome</label>
+    </fieldset>
+
+    <fieldset>
+      <legend>2. Capital of Japan</legend>
+      <label><input type="radio" name="q2" value="A"> A. Seoul</label>
+      <label><input type="radio" name="q2" value="B"> B. Beijing</label>
+      <label><input type="radio" name="q2" value="C"> C. Tokyo</label>
+    </fieldset>
+
+    <fieldset>
+      <legend>3. Short answer</legend>
+      <label>Answer: <input type="text" name="q3"></label>
+    </fieldset>
+
+    <fieldset>
+      <legend>4. True / False — the sky is blue</legend>
+      <label><input type="radio" name="q4" value="true"> True</label>
+      <label><input type="radio" name="q4" value="false"> False</label>
+    </fieldset>
+
+    <fieldset>
+      <legend>5. Select your continent</legend>
+      <label>
+        <select name="q5">
+          <option value="africa">Africa</option>
+          <option value="asia">Asia</option>
+          <option value="europe">Europe</option>
+        </select>
+      </label>
+    </fieldset>
+
+    <fieldset>
+      <legend>6. Select all that apply</legend>
+      <label><input type="checkbox" name="q6" value="A"> A. Apples</label>
+      <label><input type="checkbox" name="q6" value="B"> B. Bananas</label>
+      <label><input type="checkbox" name="q6" value="C"> C. Carrots</label>
+    </fieldset>
+
+    <fieldset>
+      <legend>7. Notes</legend>
+      <label><textarea name="q7" rows="2"></textarea></label>
+    </fieldset>
+  </form>
+</body>
+</html>

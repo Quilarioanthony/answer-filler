@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Answer Filler</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <header>
+    <h1>Answer Filler</h1>
+    <span class="badge" id="fileBadge">No source loaded</span>
+  </header>
+
+  <section class="block">
+    <div class="row">
+      <label class="file-btn">
+        Load PDF / Word
+        <input type="file" id="sourceInput" accept=".pdf,.docx,application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document" hidden>
+      </label>
+      <button id="reextractBtn" class="ghost" disabled>Re-extract</button>
+    </div>
+  </section>
+
+  <section class="block">
+    <details id="pasteDetails">
+      <summary>Paste answers as text</summary>
+      <p class="hint">Copy answers or question/answer text from anywhere and paste it here.</p>
+      <textarea id="pasteText" rows="4" placeholder="Answer: B&#10;Answer: C&#10;H2O"></textarea>
+      <div class="row">
+        <button id="usePastedBtn">Use pasted text</button>
+      </div>
+    </details>
+  </section>
+
+  <details class="block" id="patternsDetails">
+    <summary>Extraction patterns</summary>
+    <p class="hint">One regular expression per line. The answer must be in capture group 1. Numbered lines that look like questions are skipped.</p>
+    <textarea id="patterns" rows="5" spellcheck="false"></textarea>
+    <div class="row">
+      <button id="resetPatternsBtn" class="ghost">Reset defaults</button>
+    </div>
+  </details>
+
+  <section class="block">
+    <div class="row between">
+      <strong>Answers <span id="answerCount">0</span></strong>
+      <div class="row">
+        <button id="addBtn" class="ghost" title="Add an answer">Add</button>
+        <button id="clearAnswersBtn" class="ghost">Clear list</button>
+      </div>
+    </div>
+    <div id="answerList" class="answer-list"></div>
+  </section>
+
+  <section class="block actions">
+    <button id="previewBtn" class="ghost" disabled>Preview</button>
+    <button id="fillBtn" class="primary" disabled>Fill page</button>
+    <button id="clearPageBtn" class="ghost" disabled>Clear page</button>
+  </section>
+
+  <footer id="status" class="status">Load a PDF, Word file, or paste text to begin.</footer>
+
+  <script src="lib/pdf.min.js"></script>
+  <script src="lib/jszip.min.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>
